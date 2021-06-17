@@ -1,12 +1,28 @@
 $(() => {
   console.log("by arashjp");
-  $("#txtSrc").val("");
-  $("#txtSrc").on("input", (obj) => {
+  $("#txtSrc").on("input", obj => {
     console.log();
-    $("#txtDest").val(sqlFormatter.format($("#txtSrc").val().trim()));
+    $("#txtDest").val(
+      sqlFormatter.format(
+        $("#txtSrc")
+          .val()
+          .trim()
+      )
+    );
+  });
+  $("#txt-minifier-src").on("input", obj => {});
+  $("#txt-minifier-dest").on("click", obj => {
+    $(obj.target).trigger("select");
+  });
+  $("#txt-parser-src").on("input", obj => {
+    $("#txt-parser-dest").val(
+      $(obj.target)
+        .val()
+        .replace("!", "'")
+    );
   });
 
-  $("#txtDest").on("click", (obj) => {
-    $("#txtDest").select();
+  $("#txtDest").on("click", obj => {
+    $("#txtDest").trigger("select");
   });
 });

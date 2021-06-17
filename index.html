@@ -4,38 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css">
-    <style>
-        textarea{
-            width: 100%;
-        }
-        body{
-            padding-top: 30px;
-        }
-    </style>
+   
    
     <title>Sql-Formatter</title>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <textarea name="txtSrc"  id="txtSrc" rows="15"  class="form-control" placeholder="place sql query here..." autofocus>
-
-                </textarea>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <button class="nav-link active" id="formatter-tab" data-bs-toggle="tab" data-bs-target="#formattercontent" >SQL formatter</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="minifier-tab" data-bs-toggle="tab" data-bs-target="#minifiercontent">SQL minifier</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#parsercontent" >SQL parser</button>
+            </li>
+          </ul>
+          <br>
+          <div class="tab-content" id="tabcontents">
+            <div class="tab-pane fade show active" id="formattercontent" role="tabpanel" aria-labelledby="formatter-tab">
+              <div class="row">
+                <div class="col">
+                    <textarea name="txtSrc"  id="txtSrc" rows="15"  class="form-control" placeholder="place sql query here..." autofocus></textarea>
+                </div>
+                <div class="col">
+                    <textarea name="txtDest" id="txtDest" rows="15"   class="form-control">
+                        
+                    </textarea>
+                </div>
             </div>
-            <div class="col">
-                <textarea name="txtDest" id="txtDest" rows="15"   class="form-control">
-                    
-                </textarea>
             </div>
-        </div>
+            <div class="tab-pane fade" id="minifiercontent" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col">
+                  <textarea  class="form-control" name="txt-minifier-src" id="txt-minifer-src" placeholder="place sql query here..."  rows="15"></textarea>
+                </div>
+                <div class="col">
+                  <textarea class="form-control" name="txt-minifier-dest" id="txt-minifier-dest" cols="" rows="15"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="parsercontent" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col">
+                  <textarea class="form-control" name="txt-parser-src" id="txt-parser-src" placeholder="place sql query here..."  rows="15"></textarea>
+                </div>
+                <div class="col">
+                  <textarea class="form-control" name="txt-parser-dest" id="txt-parser-dest" cols="" rows="15"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        
     </div>
 </body>
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script src="./node_modules/popper.js/dist/popper.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./node_modules/sql-formatter/dist/sql-formatter.min.js"></script>
+
 <script src="./index.js"></script>
 <script>if (window.module) module = window.module;</script>
 </html>
