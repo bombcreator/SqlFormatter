@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href=".\node_modules\@fortawesome\fontawesome-free\css\all.min.css">
    
    
     <title>Sql-Formatter</title>
@@ -38,7 +39,7 @@
             <div class="tab-pane fade" id="minifiercontent" role="tabpanel" aria-labelledby="home-tab">
               <div class="row">
                 <div class="col">
-                  <textarea  class="form-control" name="txt-minifier-src" id="txt-minifer-src" placeholder="place sql query here..."  rows="15"></textarea>
+                  <textarea  class="form-control" name="txt-minifier-src" id="txt-minifier-src" placeholder="place sql query here..."  rows="15"></textarea>
                 </div>
                 <div class="col">
                   <textarea class="form-control" name="txt-minifier-dest" id="txt-minifier-dest" cols="" rows="15"></textarea>
@@ -49,6 +50,15 @@
               <div class="row">
                 <div class="col">
                   <textarea class="form-control" name="txt-parser-src" id="txt-parser-src" placeholder="place sql query here..."  rows="15"></textarea>
+                </div>
+                <div class="col-1 d-flex flex-sm-column align-content-center justify-content-center">
+                  <button id="btn-parser-change-parse" class="btn-outline-primary" data-txt-src="!" data-txt-target="'">
+                    <div class="d-flex flex-column">
+                      <i class="fas fa-exclamation "></i>
+                      <i class="fas fa-quote-right"></i>
+                    </div>
+                    
+                  </button>
                 </div>
                 <div class="col">
                   <textarea class="form-control" name="txt-parser-dest" id="txt-parser-dest" cols="" rows="15"></textarea>
@@ -64,6 +74,6 @@
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./node_modules/sql-formatter/dist/sql-formatter.min.js"></script>
 
-<script src="./index.js"></script>
+<script src="./bundel.js"></script>
 <script>if (window.module) module = window.module;</script>
 </html>
